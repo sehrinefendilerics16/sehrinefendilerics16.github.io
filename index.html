@@ -7,6 +7,7 @@
 <title>ŞEHRİN EFENDİLERİ CS 1.6</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -20,7 +21,7 @@ color:white;
 text-align:center;
 }
 
-/* HERO ALANI */
+/* HERO */
 
 .hero{
 position:relative;
@@ -32,6 +33,19 @@ justify-content:center;
 overflow:hidden;
 }
 
+/* KARARTMA */
+
+.hero::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.60);
+z-index:1;
+}
+
 /* ARKA PLAN GÖRSEL */
 
 .hero img{
@@ -41,11 +55,11 @@ left:50%;
 transform:translate(-50%,-50%);
 width:100%;
 max-width:900px;
-opacity:0.45;
 border-radius:15px;
+z-index:0;
 }
 
-/* YAZI KUTUSU */
+/* YAZI BLOĞU */
 
 .overlay{
 position:relative;
@@ -55,24 +69,25 @@ padding:20px;
 }
 
 .overlay h1{
-font-size:32px;
+font-size:34px;
 margin-bottom:10px;
 }
 
 .overlay p{
-opacity:0.85;
-margin-bottom:25px;
+opacity:0.9;
+margin-bottom:30px;
 }
 
 /* BUTONLAR */
 
 button{
-padding:15px 40px;
+padding:16px 40px;
 font-size:18px;
-margin:8px;
+margin:10px;
 border:none;
 border-radius:10px;
 cursor:pointer;
+font-weight:bold;
 }
 
 .ip{
@@ -96,7 +111,6 @@ padding-bottom:40px;
 }
 
 .hero img{
-opacity:0.5;
 width:95%;
 }
 
@@ -109,6 +123,7 @@ width:85%;
 }
 
 }
+
 </style>
 </head>
 
@@ -122,24 +137,33 @@ width:85%;
 
 <h1>ŞEHRİN EFENDİLERİ CS 1.6</h1>
 
-<p>Hilesiz Poolday Server</p>
+<p>HİLESİZ POOLDAY SERVER</p>
 
-<button class="ip" onclick="copyIP()">Server IP : 95.173.173.81:27015</button>
+<button class="ip" onclick="copyIP()">SERVER IP : 95.173.173.81:27015</button>
 
 <br>
 
 <a href="https://panel25.oyunyoneticisi.com/rank/rank_all.php?ip=95.173.173.81" target="_blank">
-<button class="rank">RANK LİSTESİ</button>
+
+<button class="rank">
+SUNUCUDAKİ SIRALAMANI GÖRMEK İÇİN TIKLA
+</button>
+
 </a>
 
 </div>
 </div>
 
 <script>
+
 function copyIP(){
+
 navigator.clipboard.writeText("95.173.173.81:27015");
-alert("Server IP kopyalandı!");
+
+alert("SERVER IP KOPYALANDI!");
+
 }
+
 </script>
 
 </body>
