@@ -3,36 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <title>ŞEHRİN EFENDİLERİ CS 1.6</title>
+
 <style>
+
 body{
 background:#0f172a;
 color:white;
-font-family:Arial;
+font-family:Arial, Helvetica, sans-serif;
 text-align:center;
-padding-top:80px;
+margin:0;
+padding:0;
+}
+
+.banner{
+width:100%;
+max-width:900px;
+margin-top:40px;
+border-radius:12px;
 }
 
 button{
 padding:15px 40px;
 font-size:18px;
-margin:10px;
+margin:15px;
 border:none;
 border-radius:10px;
 cursor:pointer;
 }
 
-.rank{background:#22c55e;color:white;}
-.ip{background:#3b82f6;color:white;}
+.ip{
+background:#3b82f6;
+color:white;
+}
+
+.rank{
+background:#22c55e;
+color:white;
+}
+
 </style>
 </head>
 
 <body>
 
+<img src="banner.jpg" class="banner">
+
 <h1>ŞEHRİN EFENDİLERİ CS 1.6</h1>
 
 <p>Hilesiz Poolday Server</p>
 
-<button class="ip" onclick="copyIP()">Server IP: 95.173.173.81:27015</button>
+<button class="ip" onclick="copyIP()">Server IP : 95.173.173.81:27015</button>
 
 <br>
 
@@ -41,10 +61,12 @@ cursor:pointer;
 </a>
 
 <script>
+
 function copyIP(){
 navigator.clipboard.writeText("95.173.173.81:27015");
-alert("Server IP kopyalandı!");
+alert("Server IP kopyalandı");
 }
+
 </script>
 
 </body>
