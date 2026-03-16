@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ŞEHRİN EFENDİLERİ CS 1.6</title>
+<title>Şehrin Efendileri CS 1.6</title>
 
 <style>
 
@@ -14,119 +13,150 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-font-family:Arial, Helvetica, sans-serif;
-background:#0f172a;
+background:#0b0b0b;
 color:white;
 }
 
 /* HERO */
 
 .hero{
-
+position:relative;
 width:100%;
-padding:120px 20px;
-
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
 background-image:url("banner.jpg");
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
 }
 
-/* CONTENT BOX */
+/* overlay */
 
-.hero-box{
-
-background:rgba(0,0,0,0.45);
-backdrop-filter:blur(6px);
-
-padding:40px 30px;
-border-radius:12px;
-
-max-width:500px;
+.hero::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
 width:100%;
-text-align:center;
-
+height:100%;
+background:rgba(0,0,0,0.6);
 }
 
-/* TEXT */
+/* içerik */
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:900px;
+padding:20px;
+}
 
 .hero h1{
-
-font-size:36px;
-margin-bottom:10px;
-
+font-size:52px;
+margin-bottom:20px;
 }
 
 .hero p{
-
-font-size:16px;
-margin-bottom:25px;
-
+font-size:20px;
+margin-bottom:30px;
+color:#ddd;
 }
 
-/* BUTTON */
+/* buton */
 
 .btn{
-
-display:block;
-
-padding:14px 20px;
-margin:10px auto;
-
-border-radius:8px;
-
+display:inline-block;
+padding:14px 28px;
+background:#ff3b3b;
+color:white;
 text-decoration:none;
-font-weight:bold;
-
-max-width:320px;
-
+font-size:18px;
+border-radius:6px;
+transition:0.2s;
 }
 
-.ip{
-
-background:#3b82f6;
-color:white;
-
+.btn:hover{
+background:#ff1f1f;
 }
 
-.rank{
+/* server info */
 
-background:#22c55e;
-color:white;
+.server-info{
+padding:60px 20px;
+text-align:center;
+}
+
+.server-info h2{
+font-size:32px;
+margin-bottom:20px;
+}
+
+.ip-box{
+font-size:22px;
+background:#1c1c1c;
+display:inline-block;
+padding:15px 25px;
+border-radius:6px;
+}
+
+/* responsive */
+
+@media (max-width:768px){
+
+.hero h1{
+font-size:36px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.btn{
+font-size:16px;
+padding:12px 24px;
+}
+
+.ip-box{
+font-size:18px;
+}
 
 }
 
 </style>
-
 </head>
-
 
 <body>
 
 <section class="hero">
 
-<div class="hero-box">
+<div class="hero-content">
 
-<h1>ŞEHRİN EFENDİLERİ CS 1.6</h1>
+<h1>ŞEHRİN EFENDİLERİ</h1>
 
-<p>HİLESİZ POOLDAY SERVER</p>
+<p>Türkiye'nin En Kaliteli Counter-Strike 1.6 Sunucusu</p>
 
-<a class="btn ip">
-SERVER IP : 95.173.173.81:27015
+<a class="btn" href="steam://connect/95.173.173.81:27015">
+Sunucuya Bağlan
 </a>
 
-<a class="btn rank" href="#">
-SUNUCUNDAKİ SIRALAMANI GÖR
-</a>
+</div>
 
+</section>
+
+
+<section class="server-info">
+
+<h2>Sunucu IP</h2>
+
+<div class="ip-box">
+95.173.173.81:27015
 </div>
 
 </section>
