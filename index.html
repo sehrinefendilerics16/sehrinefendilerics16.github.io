@@ -1,153 +1,55 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ŞEHRİN EFENDİLERİ</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
-        body { background: #000; color: white; overflow: hidden; }
+<style>
+    /* Ana Slogan (Artık daha büyük ve okunaklı) */
+    .subtitle { 
+        color: #fff; 
+        font-size: 18px; /* Boyut büyütüldü */
+        margin-bottom: 35px; 
+        letter-spacing: 1.5px;
+        font-weight: 500;
+        opacity: 0.9; /* Siliklik kaldırıldı */
+        text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+
+    /* Buton Altı Açıklamalar (Görünür ve net) */
+    .btn-desc { 
+        font-size: 13.5px; /* 10px'den 13.5px'e çıkarıldı */
+        opacity: 1; /* Tam görünürlük */
+        margin-top: 6px; 
+        color: rgba(255,255,255,0.8); /* Parlak gri-beyaz */
+        font-weight: 400;
+        letter-spacing: 0.5px;
+    }
+
+    /* Footer (Net ve temiz) */
+    .footer-text { 
+        margin-top: 50px; 
+        font-size: 13px; 
+        color: rgba(255,255,255,0.4); 
+        letter-spacing: 2px;
+        font-weight: 400;
+    }
+</style>
+
+<div class="hero-content">
+    <h1>ŞEHRİN EFENDİLERİ</h1>
+    <p class="subtitle">Sunucunun tüm istatistikleri burada.</p>
+    
+    <div class="buttons">
+        <a class="btn rank-weekly" href="https://panel25.oyunyoneticisi.com/rank/rank_all.php?ip=95.173.173.81" target="_blank">
+            <span class="btn-title"><i class="fas fa-bolt"></i> HAFTALIK SIRALAMA</span>
+            <span class="btn-desc">Güncel haftanın sıralama verileri</span>
+        </a>
         
-        .hero { 
-            height: 100vh; 
-            width: 100%; 
-            display: flex; 
-            align-items: flex-start; 
-            justify-content: center; 
-            text-align: center; 
-            background: url("banner.jpg") center/cover no-repeat; 
-            position: relative; 
-            padding-top: 70px; 
-        }
-        
-        .hero::before { 
-            content: ""; 
-            position: absolute; 
-            top: 0; left: 0; width: 100%; height: 100%; 
-            background: rgba(0, 0, 0, 0.75); 
-        }
+        <a class="btn rank-general" href="https://cs16-stats.onrender.com" target="_blank">
+            <span class="btn-title"><i class="fas fa-chart-line"></i> GENEL SIRALAMA</span>
+            <span class="btn-desc">Sunucu tarihindeki toplam başarı listesi</span>
+        </a>
 
-        .hero-content { position: relative; z-index: 2; width: 90%; max-width: 450px; }
-
-        .hero h1 { 
-            font-size: clamp(28px, 8vw, 48px); 
-            letter-spacing: 5px; 
-            margin-bottom: 10px; 
-            font-weight: 900; 
-            text-transform: uppercase;
-        }
-
-        .subtitle { 
-            color: rgba(255,255,255,0.6); 
-            font-size: 14px; 
-            margin-bottom: 35px; 
-            letter-spacing: 1px;
-            font-weight: 400;
-        }
-
-        .buttons { display: flex; flex-direction: column; gap: 15px; }
-
-        .btn { 
-            width: 100%; 
-            padding: 14px 25px; 
-            text-decoration: none; 
-            border-radius: 10px; 
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-            display: flex; 
-            flex-direction: column; /* Yazıları alt alta dizmek için */
-            align-items: center; 
-            justify-content: center; 
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .btn-title { 
-            font-size: 15px; 
-            font-weight: 700; 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            display: flex; 
-            align-items: center; 
-            gap: 10px; 
-        }
-
-        .btn-desc { 
-            font-size: 10px; 
-            opacity: 0.5; 
-            margin-top: 4px; 
-            text-transform: none; 
-            letter-spacing: 0.5px;
-            font-weight: 400;
-        }
-
-        /* RENK TEMALARI */
-        .rank-weekly { 
-            background: linear-gradient(135deg, #1e40af, #3b82f6); 
-            color: white; 
-            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
-        }
-
-        .rank-general { 
-            background: linear-gradient(135deg, #0f172a, #1e293b); 
-            color: #f8fafc; 
-            border: 1px solid #334155;
-            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.4);
-        }
-
-        .rank-archive { 
-            background: linear-gradient(135deg, #111111, #222222); 
-            color: #fbbf24; 
-            border: 1px solid #fbbf24; 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        /* HOVER EFEKTİ */
-        .btn:hover { 
-            transform: translateY(-5px) scale(1.02); 
-            filter: brightness(1.2);
-        }
-
-        .footer-text { 
-            margin-top: 50px; 
-            font-size: 11px; 
-            color: rgba(255,255,255,0.3); 
-            letter-spacing: 1px; 
-            text-transform: uppercase;
-        }
-
-        @media (max-width: 768px) { 
-            .hero { padding-top: 50px; } 
-            .subtitle { font-size: 12px; }
-        }
-    </style>
-</head>
-<body>
-
-<section class="hero">
-    <div class="hero-content">
-        <h1>ŞEHRİN EFENDİLERİ</h1>
-        <p class="subtitle">İstatistik ve geçmiş kayıt portalı.</p>
-        
-        <div class="buttons">
-            <a class="btn rank-weekly" href="https://panel25.oyunyoneticisi.com/rank/rank_all.php?ip=95.173.173.81" target="_blank">
-                <span class="btn-title"><i class="fas fa-bolt"></i> Haftalık Sıralama</span>
-                <span class="btn-desc">Bu haftanın en iyi performansları</span>
-            </a>
-            
-            <a class="btn rank-general" href="https://cs16-stats.onrender.com" target="_blank">
-                <span class="btn-title"><i class="fas fa-chart-line"></i> Genel Sıralama</span>
-                <span class="btn-desc">Tüm zamanların en iyi oyuncuları</span>
-            </a>
-
-            <a class="btn rank-archive" href="https://sehrin-efendileri-arsiv.onrender.com" target="_blank">
-                <span class="btn-title"><i class="fas fa-history"></i> Geçmiş Haftalar</span>
-                <span class="btn-desc">Eski hafta kayıtları ve arşiv</span>
-            </a>
-        </div>
-
-        <p class="footer-text">© 2026 Şehrin Efendileri</p>
+        <a class="btn rank-archive" href="https://sehrin-efendileri-arsiv.onrender.com" target="_blank">
+            <span class="btn-title"><i class="fas fa-history"></i> GEÇMİŞ HAFTALAR</span>
+            <span class="btn-desc">Kapanmış haftaların arşiv kayıtları</span>
+        </a>
     </div>
-</section>
 
-</body>
-</html>
+    <p class="footer-text">© 2026 Şehrin Efendileri</p>
+</div>
