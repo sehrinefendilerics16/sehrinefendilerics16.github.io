@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
-        body { background: #000; color: white; min-height: 100vh; }
+        body { background: #000; color: white; min-height: 100vh; overflow-x: hidden; }
         
         .hero { 
             height: 100vh; 
@@ -21,7 +21,7 @@
             padding-top: 70px; 
         }
         
-        /* Arka planı karartan perde */
+        /* Arka plan karartma perdesi */
         .hero::before { 
             content: ""; 
             position: absolute; 
@@ -41,6 +41,7 @@
             text-shadow: 0 4px 15px rgba(0,0,0,0.8);
         }
 
+        /* Ana Slogan */
         .subtitle { 
             color: #fff; 
             font-size: 18px; 
@@ -75,24 +76,60 @@
             gap: 10px; 
         }
 
+        /* Buton Altı Açıklamalar */
         .btn-desc { 
             font-size: 13.5px; 
             opacity: 1; 
             margin-top: 6px; 
-            color: rgba(255,255,255,0.8); 
+            color: rgba(255,255,255,0.85); 
             font-weight: 400;
+            letter-spacing: 0.5px;
         }
 
-        /* Renkler */
-        .rank-weekly { background: linear-gradient(135deg, #1e40af, #3b82f6); color: white; }
-        .rank-general { background: linear-gradient(135deg, #0f172a, #1e293b); color: #f8fafc; border: 1px solid #334155; }
-        .rank-archive { background: linear-gradient(135deg, #111111, #222222); color: #fbbf24; border: 1px solid #fbbf24; }
+        /* Renk Temaları */
+        .rank-weekly { 
+            background: linear-gradient(135deg, #1e40af, #3b82f6); 
+            color: white; 
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+        }
 
-        .btn:hover { transform: translateY(-5px) scale(1.02); filter: brightness(1.2); }
+        .rank-general { 
+            background: linear-gradient(135deg, #0f172a, #1e293b); 
+            color: #f8fafc; 
+            border: 1px solid #334155;
+            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.4);
+        }
 
-        .footer-text { margin-top: 50px; font-size: 13px; color: rgba(255,255,255,0.4); letter-spacing: 2px; }
+        .rank-archive { 
+            background: linear-gradient(135deg, #111111, #222222); 
+            color: #fbbf24; 
+            border: 1px solid #fbbf24; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
 
-        @media (max-width: 768px) { .hero { padding-top: 50px; } }
+        /* Etkileşim */
+        .btn:hover { 
+            transform: translateY(-5px) scale(1.02); 
+            filter: brightness(1.2);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+        }
+
+        /* Alt Mühür (Footer) - Netleştirildi */
+        .footer-text { 
+            margin-top: 50px; 
+            font-size: 13px; 
+            color: rgba(255, 255, 255, 0.7); /* Siliklik giderildi */
+            letter-spacing: 2px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) { 
+            .hero { padding-top: 50px; } 
+            .subtitle { font-size: 16px; }
+            .btn-title { font-size: 14px; }
+            .btn-desc { font-size: 12px; }
+        }
     </style>
 </head>
 <body>
