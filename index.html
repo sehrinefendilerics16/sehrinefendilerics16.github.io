@@ -72,7 +72,7 @@
             padding: 12px 25px; 
             text-decoration: none; 
             border-radius: 8px; 
-            transition: transform 0.2s ease; 
+            transition: all 0.3s ease; /* Odak efekti için transform yerine all yapıldı */
             display: flex; 
             flex-direction: column; 
             align-items: center; 
@@ -121,10 +121,19 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
 
-        /* Etkileşim */
+        /* Etkileşim - Üzerine gelinen buton büyür */
         .btn:hover { 
-            transform: translateY(-3px); 
-            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            transform: translateY(-4px) scale(1.03); 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5); 
+            z-index: 2; 
+            position: relative;
+        }
+
+        /* ODAK EFEKTİ: Bir butona gelindiğinde diğerleri hafifçe solar ve küçülür */
+        .buttons:hover .btn:not(:hover) {
+            opacity: 0.6; 
+            transform: scale(0.98); 
+            filter: grayscale(20%); 
         }
 
         /* Alt Mühür (Footer) */
