@@ -108,14 +108,17 @@
             box-shadow: 0 4px 15px rgba(15, 23, 42, 0.4);
         }
 
+        /* GÜNCELLENEN BUTON: Geçmiş Haftalar (Sarı Çerçeveli Siyah Tema) */
         .rank-archive { 
-            background: linear-gradient(135deg, #111111, #222222); 
-            color: #94a3b8; 
-            border: 1px solid rgba(255,255,255,0.05); 
+            background: rgba(0, 0, 0, 0.6); 
+            color: #facc15; 
+            border: 1px solid rgba(250, 204, 21, 0.5); 
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
+        .rank-archive .btn-desc { color: #facc15; opacity: 0.7; }
+        .rank-archive:hover { border-color: #facc15; background: rgba(250, 204, 21, 0.05); }
 
-        /* VİTRİN BUTONU: Listenin sonundaki özel altın tema */
+        /* VİTRİN BUTONU: Oyuncu Kartı (Tam Altın Tema) */
         .rank-player-card {
             background: linear-gradient(135deg, #111, #000);
             color: #facc15;
@@ -178,7 +181,6 @@
                 <span class="btn-desc">Geçmiş haftaların sıralamaları</span>
             </a>
 
-            <!-- GÜNCELLENEN KISIM: Link yeni kullanıcı adına göre düzeltildi -->
             <a class="btn rank-player-card" href="https://sehrinefendileri.github.io/sehrin-efendileri-oyuncu-karti/" target="_blank">
                 <span class="btn-title"><i class="fas fa-id-card"></i> OYUNCU KARTI SORGULA</span>
                 <span class="btn-desc">İstatistiklerini gör ve meydan oku!</span>
