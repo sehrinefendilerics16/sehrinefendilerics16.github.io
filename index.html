@@ -21,7 +21,6 @@
             padding-top: 70px; 
         }
         
-        /* Arka plan karartma perdesi */
         .hero::before { 
             content: ""; 
             position: absolute; 
@@ -41,7 +40,6 @@
             text-shadow: 0 4px 15px rgba(0,0,0,0.8);
         }
 
-        /* Başlık altı çizgi */
         .hero h1::after {
             content: "";
             display: block;
@@ -52,7 +50,6 @@
             opacity: 0.8;
         }
 
-        /* Ana Slogan */
         .subtitle { 
             color: #fff; 
             font-size: 18px; 
@@ -63,16 +60,14 @@
             opacity: 0.9;
         }
 
-        /* Butonlar Grubu */
         .buttons { display: flex; flex-direction: column; gap: 14px; }
 
-        /* Buton Hissiyatı */
         .btn { 
             width: 100%; 
             padding: 12px 25px; 
             text-decoration: none; 
             border-radius: 8px; 
-            transition: all 0.3s ease; /* Odak efekti için transform yerine all yapıldı */
+            transition: all 0.3s ease; 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
@@ -90,7 +85,6 @@
             gap: 10px; 
         }
 
-        /* Buton Altı Açıklamalar */
         .btn-desc { 
             font-size: 13.5px; 
             opacity: 1; 
@@ -116,27 +110,34 @@
 
         .rank-archive { 
             background: linear-gradient(135deg, #111111, #222222); 
-            color: #fbbf24; 
-            border: 1px solid rgba(251,191,36,0.35); 
+            color: #94a3b8; 
+            border: 1px solid rgba(255,255,255,0.05); 
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
 
-        /* Etkileşim - Üzerine gelinen buton büyür */
+        /* VİTRİN BUTONU: Listenin sonundaki özel altın tema */
+        .rank-player-card {
+            background: linear-gradient(135deg, #111, #000);
+            color: #facc15;
+            border: 1px solid rgba(250, 204, 21, 0.3);
+            margin-top: 5px;
+            box-shadow: 0 4px 20px rgba(250, 204, 21, 0.1);
+        }
+        .rank-player-card .btn-desc { color: #facc15; opacity: 0.7; }
+        .rank-player-card:hover { border-color: #facc15; box-shadow: 0 0 25px rgba(250, 204, 21, 0.2); }
+
         .btn:hover { 
             transform: translateY(-4px) scale(1.03); 
             box-shadow: 0 8px 20px rgba(0,0,0,0.5); 
             z-index: 2; 
-            position: relative;
         }
 
-        /* ODAK EFEKTİ: Bir butona gelindiğinde diğerleri hafifçe solar ve küçülür */
         .buttons:hover .btn:not(:hover) {
             opacity: 0.6; 
             transform: scale(0.98); 
             filter: grayscale(20%); 
         }
 
-        /* Alt Mühür (Footer) */
         .footer-text { 
             margin-top: 50px; 
             font-size: 13px; 
@@ -151,8 +152,6 @@
         @media (max-width: 768px) { 
             .hero { padding-top: 50px; } 
             .subtitle { font-size: 16px; }
-            .btn-title { font-size: 14px; }
-            .btn-desc { font-size: 12px; }
         }
     </style>
 </head>
@@ -177,6 +176,12 @@
             <a class="btn rank-archive" href="https://sehrin-efendileri-arsiv.onrender.com" target="_blank">
                 <span class="btn-title"><i class="fas fa-history"></i> GEÇMİŞ HAFTALAR</span>
                 <span class="btn-desc">Geçmiş haftaların sıralamaları</span>
+            </a>
+
+            <!-- VİTRİN BUTONU: Oyuncu Kartı Sorgulama -->
+            <a class="btn rank-player-card" href="https://sehrinefendilerics16.github.io/sehrin-efendileri-oyuncu-karti/" target="_blank">
+                <span class="btn-title"><i class="fas fa-id-card"></i> OYUNCU KARTI SORGULA</span>
+                <span class="btn-desc">İstatistiklerini gör ve meydan oku!</span>
             </a>
         </div>
 
